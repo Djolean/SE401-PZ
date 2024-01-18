@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<head>
+
+    <title>Klijenti</title>
+    <style>
+        .square-button {
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 120px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .square-button:hover {
+            background-color: #0056b3;
+        }
+
+        .divCenter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .square-button-red {
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 120px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+<div th:include="navbar/navbar :: navbar"></div>
+
+<div class="divCenter">
+    <div class="row">
+        <div class="col-md-2">
+            <form th:action="@{/narudzbinas/sto/novaNarudzbina}" method="get">
+                <input type="hidden" name="id" value="1">
+                <button type="submit" th:class="${stos.get(0).zauzeto ? 'square-button-red' : 'square-button'}">1</button>
+            </form>
+        </div>
+
+        <div class="col-md-2">
+            <form th:action="@{/narudzbinas/sto/novaNarudzbina}" method="get">
+                <input type="hidden" name="id" value="2">
+                <button type="submit" th:class="${stos.get(1).zauzeto ? 'square-button-red' : 'square-button'}">2</button>
+            </form>
+        </div>
+
+        <div class="col-md-2">
+            <form th:action="@{/narudzbinas/sto/novaNarudzbina}" method="get">
+                <input type="hidden" name="id" value="3">
+                <button type="submit" th:class="${stos.get(2).zauzeto ? 'square-button-red' : 'square-button'}">3</button>
+            </form>
+        </div>
+
+        <div class="col-md-2">
+            <form th:action="@{/narudzbinas/sto/novaNarudzbina}" method="get">
+                <input type="hidden" name="id" value="4">
+                <button type="submit" th:class="${stos.get(3).zauzeto ? 'square-button-red' : 'square-button'}">4</button>
+            </form>
+        </div>
+
+        <div class="col-md-2">
+            <form th:action="@{/narudzbinas/sto/novaNarudzbina}" method="get">
+                <input type="hidden" name="id" value="5">
+                <button type="submit" th:class="${stos.get(4).zauzeto ? 'square-button-red' : 'square-button'}">5</button>
+            </form>
+        </div>
+
+        <div class="col-md-2">
+            <form th:action="@{/narudzbinas/sto/novaNarudzbina}" method="get">
+                <input type="hidden" name="id" value="6">
+                <button type="submit" th:class="${stos.get(5).zauzeto ? 'square-button-red' : 'square-button'}">6</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
